@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#888</color>
     <color name="blue">#0000FF</color>
+    <color name="swapblue">#202c3c</color>
+    <color name="swaporan">#ff7404</color>
+
 
 </resources>
