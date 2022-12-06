@@ -1,14 +1,10 @@
 package com.example.swaplanguageapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,16 +14,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.swaplanguageapp.Adapters.CalendarAdapter;
 import com.example.swaplanguageapp.Adapters.MainAdapter;
 import com.example.swaplanguageapp.Models.Model;
+import com.example.swaplanguageapp.Views.LoginRegisterActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
@@ -36,12 +30,19 @@ public class MainActivity extends AppCompatActivity{
     RecyclerView myRv;
     String URL = "";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myRv = findViewById(R.id.myRv);
         parseApiData();
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(this, LoginRegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void parseApiData(){
