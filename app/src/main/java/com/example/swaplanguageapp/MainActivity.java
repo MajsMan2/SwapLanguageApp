@@ -34,15 +34,14 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        myRv = findViewById(R.id.myRv);
+        setContentView(R.layout.activity_profile);
         parseApiData();
 
-//        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-//            Intent intent = new Intent(this, LoginRegisterActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(this, LoginRegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void parseApiData(){
