@@ -20,21 +20,6 @@
         android:name="com.example.swaplanguageapp.ProfileActivity"
         android:label="ProfileActivity" />
     <activity
-        android:id="@+id/contactActivity"
-        android:name="com.example.swaplanguageapp.Views.ContactActivity"
-        android:label="activity_contact"
-        tools:layout="@layout/activity_contact" />
-    <activity
-        android:id="@+id/progressActivity"
-        android:name="com.example.swaplanguageapp.Views.ProgressActivity"
-        android:label="activity_progress"
-        tools:layout="@layout/activity_progress" />
-    <activity
-        android:id="@+id/videoActivity"
-        android:name="com.example.swaplanguageapp.Views.VideoActivity"
-        android:label="activity_video"
-        tools:layout="@layout/activity_video" />
-    <activity
         android:id="@+id/calendar"
         android:name="com.example.swaplanguageapp.Views.Calendar"
         android:label="calendar"

@@ -26,9 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextInputEditText displayNameEdit;
     Button updateProfileButton;
 
-
     String DISPLAY_NAME = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         displayNameEdit = findViewById(R.id.displayNameEdit);
         updateProfileButton = findViewById(R.id.updateProfileButton);
-
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -76,5 +73,4 @@ public class ProfileActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

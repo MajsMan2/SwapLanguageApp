@@ -30,11 +30,10 @@ public class MainActivity extends AppCompatActivity{
     RecyclerView myRv;
     String URL = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_main);
         parseApiData();
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
