@@ -7,7 +7,6 @@
     android:background="#C0BABA"
     tools:context=".MainActivity">
 
-
   <LinearLayout
       android:layout_width="0dp"
       android:layout_height="175dp"
@@ -29,7 +28,7 @@
         app:cardElevation="4dp">
 
       <TextView
-          android:id="@+id/textView7"
+          android:id="@+id/blogtext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center|top"
@@ -39,7 +38,7 @@
           android:textStyle="bold" />
 
       <ImageView
-          android:id="@+id/imageView4"
+          android:id="@+id/blogpic"
           android:layout_width="120dp"
           android:layout_height="100dp"
           android:layout_gravity="bottom|center"
@@ -57,7 +56,7 @@
         app:cardElevation="4dp">
 
       <TextView
-          android:id="@+id/textView7"
+          android:id="@+id/contacttext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center|top"
@@ -67,7 +66,7 @@
           android:textStyle="bold" />
 
       <ImageView
-          android:id="@+id/imageView4"
+          android:id="@+id/contactpic"
           android:layout_width="86dp"
           android:layout_height="91dp"
           android:layout_gravity="bottom|center"
@@ -87,7 +86,7 @@
         app:cardElevation="4dp">
 
       <ImageView
-          android:id="@+id/imageView3"
+          android:id="@+id/logoutpic"
           android:layout_width="120dp"
           android:layout_height="100dp"
           android:layout_gravity="bottom|center"
@@ -95,7 +94,7 @@
           app:srcCompat="@drawable/door_svgrepo_com" />
 
       <TextView
-          android:id="@+id/textView6"
+          android:id="@+id/logouttext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center|top"
@@ -138,7 +137,7 @@
       app:layout_constraintTop_toBottomOf="@id/imageView2">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/seeclassestext"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -161,7 +160,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/calendarpic"
         android:layout_width="113dp"
         android:layout_height="101dp"
         android:layout_gravity="bottom|right"
@@ -192,14 +191,14 @@
         app:cardElevation="4dp">
 
       <ImageView
-          android:id="@+id/imageView3"
+          android:id="@+id/videospic"
           android:layout_width="120dp"
           android:layout_height="100dp"
           android:layout_gravity="bottom|center"
           app:srcCompat="@drawable/tv_svgrepo_com" />
 
       <TextView
-          android:id="@+id/textView6"
+          android:id="@+id/videostext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center|top"
@@ -219,7 +218,7 @@
         app:cardElevation="4dp">
 
       <TextView
-          android:id="@+id/textView7"
+          android:id="@+id/profiletext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center|top"
@@ -229,7 +228,7 @@
           android:textStyle="bold" />
 
       <ImageView
-          android:id="@+id/imageView4"
+          android:id="@+id/profilepic"
           android:layout_width="120dp"
           android:layout_height="100dp"
           android:layout_gravity="bottom|center"
@@ -261,7 +260,7 @@
         app:cardElevation="4dp">
 
       <TextView
-          android:id="@+id/textView9"
+          android:id="@+id/trackprogtext"
           android:layout_width="300dp"
           android:layout_height="wrap_content"
           android:layout_gravity="bottom"
@@ -272,7 +271,7 @@
           android:textSize="20sp" />
 
       <TextView
-          android:id="@+id/textView8"
+          android:id="@+id/progresstext"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
@@ -283,7 +282,7 @@
           android:textStyle="bold" />
 
       <ImageView
-          android:id="@+id/imageView5"
+          android:id="@+id/progresspic"
           android:layout_width="180dp"
           android:layout_height="130dp"
           android:layout_gravity="bottom|center|right"
