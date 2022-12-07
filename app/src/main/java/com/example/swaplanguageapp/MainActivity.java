@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity{
         myRv = findViewById(R.id.myRv);
         parseApiData();
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(this, LoginRegisterActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+//            Intent intent = new Intent(this, LoginRegisterActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
     }
 
     public void parseApiData(){
