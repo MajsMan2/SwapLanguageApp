@@ -15,7 +15,7 @@
         android:theme="@style/Theme.SwapLanguageApp"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Views.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".Views.LoginRegisterActivity"

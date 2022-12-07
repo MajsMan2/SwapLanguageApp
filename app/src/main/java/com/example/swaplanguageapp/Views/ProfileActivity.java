@@ -1,4 +1,4 @@
-package com.example.swaplanguageapp;
+package com.example.swaplanguageapp.Views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 import android.view.View;
 
 
+import com.example.swaplanguageapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;

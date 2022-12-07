@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/activity_login_register.xml" value="0.17239583333333333" />
         <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/calendar.xml" value="0.1859375" />
+        <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/calendar_cell.xml" value="0.1859375" />
+        <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/fragment_p_o_s_t.xml" value="0.1859375" />
         <entry key="..\:/Users/ayrni/AndroidStudioProjects/SwapLanguageApp2/app/src/main/res/layout/settings_activity.xml" value="0.18645833333333334" />
       </map>
     </option>
