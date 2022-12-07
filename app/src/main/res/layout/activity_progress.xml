@@ -8,7 +8,7 @@
     tools:context=".Views.ProgressActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/progressbutton"
         android:layout_width="146dp"
         android:layout_height="88dp"
         android:layout_marginStart="133dp"

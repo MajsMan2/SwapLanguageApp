@@ -8,7 +8,7 @@
     tools:context=".Views.BlogActivity">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/blogbutton"
         android:layout_width="146dp"
         android:layout_height="88dp"
         android:layout_marginStart="133dp"
