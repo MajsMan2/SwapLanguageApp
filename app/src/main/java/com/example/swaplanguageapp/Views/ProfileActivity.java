@@ -36,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
         displayNameEdit = findViewById(R.id.displayNameEdit);
         displayEmailEdit = findViewById(R.id.displayEmailEdit);

@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity{
         profileButton = findViewById(R.id.profileButton);
         parseApiData();
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(this, LoginRegisterActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+//            Intent intent = new Intent(this, LoginRegisterActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
     }
 
     private void startLoginActivity() {
@@ -150,5 +150,4 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
     }
-
 }

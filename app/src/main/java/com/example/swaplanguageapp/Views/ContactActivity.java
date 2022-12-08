@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.swaplanguageapp.R;
 
-public class BlogFragment extends Fragment {
+public class ContactActivity extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_blog, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contact);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
     }
 }

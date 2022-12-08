@@ -27,6 +27,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();

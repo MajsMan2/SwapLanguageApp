@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.swaplanguageapp.R;
 
-public class VideoFragment extends Fragment {
+public class BlogActivity extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_video, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_blog);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
     }
 }
