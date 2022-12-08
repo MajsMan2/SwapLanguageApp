@@ -129,7 +129,8 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/fui_ic_googleg_color_24dp"/>
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/displayEmailEdit"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
@@ -146,14 +147,13 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/fui_ic_googleg_color_24dp"/>
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/displayPhoneEdit"
                 android:textStyle="bold"
-
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="+266 225 225"/>
+                android:paddingLeft="20dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"

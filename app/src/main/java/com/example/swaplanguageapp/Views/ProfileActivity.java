@@ -25,11 +25,12 @@ public class ProfileActivity extends AppCompatActivity {
 
 //    CircleimageView circleimageView;
     TextInputEditText displayNameEdit;
+    TextInputEditText displayEmailEdit;
+    TextInputEditText displayPhoneEdit;
+
     Button updateProfileButton;
 
-
     String DISPLAY_NAME = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         displayNameEdit = findViewById(R.id.displayNameEdit);
+        displayEmailEdit = findViewById(R.id.displayEmailEdit);
+        displayPhoneEdit = findViewById(R.id.displayPhoneEdit);
         updateProfileButton = findViewById(R.id.updateProfileButton);
 
 
@@ -46,6 +49,10 @@ public class ProfileActivity extends AppCompatActivity {
             if (user.getDisplayName() != null) {
                 displayNameEdit.setText(user.getDisplayName());
                 displayNameEdit.setSelection(user.getDisplayName().length());
+                displayEmailEdit.setText(user.getEmail());
+                displayEmailEdit.setSelection(user.getEmail().length());
+                displayPhoneEdit.setText(user.getPhoneNumber());
+                displayPhoneEdit.setSelection(user.getPhoneNumber().length());
             }
     }
 }
