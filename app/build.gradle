@@ -8,6 +8,10 @@ android {
     compileSdk 32
     buildToolsVersion "30.0.3"
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.swaplanguageapp"
         minSdk 26

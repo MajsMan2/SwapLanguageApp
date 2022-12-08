@@ -6,6 +6,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,12 +23,14 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        textView = findViewById(R.id.dateView);
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -38,6 +41,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYear);
     }
+
     private void setMonthView()
     {
         monthYearText.setText(monthYearFromDate(selectedDate));
@@ -89,9 +93,9 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     @Override
     public void onItemClick(int position, String dayText)
     {
-        if(dayText.equals("")){
-            String message = "Selected Date " + dayText + "" + monthYearFromDate(selectedDate);
-            Toast.makeText(this, message , Toast.LENGTH_LONG).show();
+        if(dayText.equals(dayText)){
+            String message = "Selected Date: " + dayText + " " + monthYearFromDate(selectedDate);
+            textView.setText(message);
         }
     }
 }
