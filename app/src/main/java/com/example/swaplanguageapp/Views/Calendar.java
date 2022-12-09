@@ -1,5 +1,8 @@
 package com.example.swaplanguageapp.Views;
 
+import static com.example.swaplanguageapp.CalendarUtils.daysInMonthArray;
+import static com.example.swaplanguageapp.CalendarUtils.monthYearFromDate;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,7 +45,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     EventService eventService;
     EventUserService eventUserService;
     SeriesService seriesService;
-
     TextView responseText;
 
 
@@ -61,10 +62,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     }
 
-
-
-
-
     private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
@@ -74,38 +71,13 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     private void setMonthView()
     {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
-        ArrayList<String> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
+        ArrayList<LocalDate> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
 
         CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
 
-    }
-
-    public static ArrayList<String> daysInMonthArray(LocalDate date)
-    {
-        ArrayList<String> daysInMonthArray = new ArrayList<>();
-        YearMonth yearMonth = YearMonth.from(date);
-        int daysInMonth = yearMonth.lengthOfMonth();
-        LocalDate firstOfMonth = CalendarUtils.selectedDate.withDayOfMonth(1);
-        int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
-
-        for(int i=1; i<=42; i++){
-            if(i <= dayOfWeek || i > daysInMonth + dayOfWeek) {
-                daysInMonthArray.add("");
-            }
-            else{
-                daysInMonthArray.add(String.valueOf(i - dayOfWeek));
-            }
-        }
-        return daysInMonthArray;
-    }
-
-    public String monthYearFromDate(LocalDate date)
-    {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
-        return date.format(formatter);
     }
 
     public void nextMonthAction (View view){
