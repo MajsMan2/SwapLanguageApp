@@ -1,5 +1,6 @@
 package com.example.swaplanguageapp.Views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.swaplanguageapp.APIClient.APIClient;
 import com.example.swaplanguageapp.Adapters.CalendarAdapter;
+import com.example.swaplanguageapp.CalendarUtils;
 import com.example.swaplanguageapp.Interfaces.EventService;
 import com.example.swaplanguageapp.Interfaces.EventUserService;
 import com.example.swaplanguageapp.Interfaces.SeriesService;
@@ -35,8 +37,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-    private LocalDate selectedDate;
-    TextView textView;
 
 
     //API
@@ -52,9 +52,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        textView = findViewById(R.id.dateView);
         initWidgets();
-        selectedDate = LocalDate.now();
+        CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
 
         responseText = findViewById(R.id.calendar);
@@ -74,8 +73,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     private void setMonthView()
     {
-        monthYearText.setText(monthYearFromDate(selectedDate));
-        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
+        monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
+        ArrayList<String> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
 
         CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
@@ -84,12 +83,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     }
 
-    private ArrayList<String> daysInMonthArray(LocalDate date)
+    public static ArrayList<String> daysInMonthArray(LocalDate date)
     {
         ArrayList<String> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = YearMonth.from(date);
         int daysInMonth = yearMonth.lengthOfMonth();
-        LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
+        LocalDate firstOfMonth = CalendarUtils.selectedDate.withDayOfMonth(1);
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         for(int i=1; i<=42; i++){
@@ -103,29 +102,27 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         return daysInMonthArray;
     }
 
-    private String monthYearFromDate(LocalDate date)
+    public String monthYearFromDate(LocalDate date)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
 
-
     public void nextMonthAction (View view){
-        selectedDate = selectedDate.plusMonths(1);
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
         setMonthView();
     }
 
     public void previousMonthAction (View view){
-        selectedDate = selectedDate.minusMonths(1);
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
         setMonthView();
     }
 
     @Override
-    public void onItemClick(int position, String dayText)
-    {
-        if(dayText.equals(dayText)){
-            String message = "Selected Date: " + dayText + " " + monthYearFromDate(selectedDate);
-            textView.setText(message);
+    public void onItemClick(int position, LocalDate date) {
+        if (date != null) {
+            CalendarUtils.selectedDate = date;
+            setMonthView();
         }
     }
 
@@ -156,8 +153,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
             }
         });
-
     }
+
     private void createNewEvent() {
         Event event = new Event();
         Call<Event> call = eventService.Create(event);
@@ -173,5 +170,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                 call.cancel();
             }
         });
+    }
+    public void weeklyAction(View view){
+        startActivity(new Intent(this, WeekViewActivity.class));
     }
 }
