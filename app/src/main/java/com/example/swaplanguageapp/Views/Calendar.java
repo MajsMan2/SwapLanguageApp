@@ -49,7 +49,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
@@ -62,14 +62,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYear);
     }
 
-    private void setMonthView()
-    {
+    private void setMonthView() {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
 
@@ -80,12 +78,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     }
 
-    public void nextMonthAction (View view){
+    public void nextMonthAction(View view) {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
         setMonthView();
     }
 
-    public void previousMonthAction (View view){
+    public void previousMonthAction(View view) {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
         setMonthView();
     }
@@ -143,7 +141,9 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             }
         });
     }
-    public void weeklyAction(View view){
-        startActivity(new Intent(this, WeekViewActivity.class));
+
+    public void weeklyAction(View view) {
+        Intent intent = new Intent(this, WeekViewActivity.class);
+        startActivity(intent);
     }
 }

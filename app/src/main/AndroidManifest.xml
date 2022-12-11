@@ -61,6 +61,12 @@
             android:exported="false">
 
         </activity>
+
+        <activity
+            android:name=".Views.WeekViewActivity"
+            android:parentActivityName=".Views.Calendar"
+            android:exported="false">
+        </activity>
         <activity
             android:name=".Views.ProfileActivity"
             android:parentActivityName=".MainActivity"
