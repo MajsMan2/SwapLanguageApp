@@ -1,6 +1,6 @@
 package com.example.swaplanguageapp.Interfaces;
 
-import com.example.swaplanguageapp.Models.Event;
+import com.example.swaplanguageapp.Models.CalEvent;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import retrofit2.http.Path;
 
 public interface EventService {
     @GET("Event/{id}")
-    Call<List<Event>> getById(@Path("id") Event event);
+    Call<List<CalEvent>> getById(@Path("id") CalEvent event);
 
     @POST()
-    Call<Event> Create(@Body Event event);
+    Call<CalEvent> Create(@Body CalEvent event);
 
     @DELETE("users/{id}")
-    Call<Event> DeleteById(@Path("id") Event event);
+    Call<CalEvent> DeleteById(@Path("id") CalEvent event);
 }

@@ -15,5 +15,5 @@ public class EventUser {
     @SerializedName("host")
     public Boolean Host;
     @SerializedName("event")
-    public Event Event;
+    public CalEvent Event;
 }

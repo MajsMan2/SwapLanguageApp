@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public class Event {
+public class CalEvent {
     @SerializedName("allday")
     public boolean AllDay;
     @SerializedName("startDate")
