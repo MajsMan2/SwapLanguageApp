@@ -3,6 +3,7 @@ package com.example.swaplanguageapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,13 +26,19 @@ import com.example.swaplanguageapp.Models.Model;
 import com.example.swaplanguageapp.Views.BlogActivity;
 import com.example.swaplanguageapp.Views.Calendar;
 import com.example.swaplanguageapp.Views.ContactActivity;
+import com.example.swaplanguageapp.Views.HomeFragment;
 import com.example.swaplanguageapp.Views.LoginRegisterActivity;
+import com.example.swaplanguageapp.Views.NotificationFragment;
 import com.example.swaplanguageapp.Views.ProfileActivity;
 import com.example.swaplanguageapp.Views.ProgressActivity;
+import com.example.swaplanguageapp.Views.SettingsFragment;
 import com.example.swaplanguageapp.Views.VideoActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
@@ -46,13 +53,47 @@ public class MainActivity extends AppCompatActivity{
     String URL = "";
     private static final String TAG = "MainActivity";
 
+    BottomNavigationView bottomNavigationView;
+
+    HomeFragment homeFragment = new HomeFragment();
+    SettingsFragment settingsFragment = new SettingsFragment();
+    NotificationFragment notificationFragment = new NotificationFragment();
+
     Button profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        profileButton = findViewById(R.id.profileButton);
+
+        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+
+        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.notification);
+        badgeDrawable.setVisible(true);
+        badgeDrawable.setNumber(8);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+                        return true;
+                    case R.id.notification:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,notificationFragment).commit();
+                        return true;
+                    case R.id.settings:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,settingsFragment).commit();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
+//        profileButton = findViewById(R.id.profileButton);
         parseApiData();
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
