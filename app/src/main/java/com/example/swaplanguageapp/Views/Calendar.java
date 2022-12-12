@@ -5,11 +5,14 @@ import static com.example.swaplanguageapp.CalendarUtils.monthYearFromDate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,9 +22,13 @@ import com.example.swaplanguageapp.CalendarUtils;
 import com.example.swaplanguageapp.Interfaces.EventService;
 import com.example.swaplanguageapp.Interfaces.EventUserService;
 import com.example.swaplanguageapp.Interfaces.SeriesService;
+import com.example.swaplanguageapp.MainActivity;
 import com.example.swaplanguageapp.Models.CalEvent;
 import com.example.swaplanguageapp.Models.EventUser;
 import com.example.swaplanguageapp.R;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -38,23 +45,24 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
 
-
     //API
     EventService eventService;
     EventUserService eventUserService;
     SeriesService seriesService;
     TextView responseText;
-
+    DrawerLayout drawerLayout;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
 
+        drawerLayout = findViewById(R.id.drawer);
         responseText = findViewById(R.id.calendar);
         eventService = APIClient.getClient().create(EventService.class);
 
@@ -143,5 +151,18 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     public void weeklyAction(View view) {
         Intent intent = new Intent(this, WeekViewActivity.class);
         startActivity(intent);
+    }
+    public  void ClickMenu(View view){
+        openDrawer(drawerLayout);
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
     }
 }

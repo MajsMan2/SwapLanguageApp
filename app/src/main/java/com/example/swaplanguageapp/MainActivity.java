@@ -1,20 +1,20 @@
 package com.example.swaplanguageapp;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,12 +29,9 @@ import com.example.swaplanguageapp.Models.Model;
 import com.example.swaplanguageapp.Views.BlogActivity;
 import com.example.swaplanguageapp.Views.Calendar;
 import com.example.swaplanguageapp.Views.ContactActivity;
-import com.example.swaplanguageapp.Views.HomeFragment;
 import com.example.swaplanguageapp.Views.LoginRegisterActivity;
-import com.example.swaplanguageapp.Views.NotificationFragment;
 import com.example.swaplanguageapp.Views.ProfileActivity;
 import com.example.swaplanguageapp.Views.ProgressActivity;
-import com.example.swaplanguageapp.Views.SettingsFragment;
 import com.example.swaplanguageapp.Views.VideoActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,7 +39,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -56,13 +52,8 @@ public class MainActivity extends AppCompatActivity{
     String URL = "";
     private static final String TAG = "MainActivity";
 
+    DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
-
-    HomeFragment homeFragment = new HomeFragment();
-    SettingsFragment settingsFragment = new SettingsFragment();
-    NotificationFragment notificationFragment = new NotificationFragment();
-
-    Button profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -71,24 +62,28 @@ public class MainActivity extends AppCompatActivity{
 
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
-
-        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.notification);
+        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.calendar);
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(8);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        drawerLayout = findViewById(R.id.drawer);
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+                        Toast.makeText(getApplicationContext(), "Home Page", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         return true;
-                    case R.id.notification:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,notificationFragment).commit();
+                    case R.id.news:
+                        startActivity(new Intent(getApplicationContext(), BlogActivity.class));
                         return true;
-                    case R.id.settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,settingsFragment).commit();
+                    case R.id.profile:
+                        Toast.makeText(getApplicationContext(), "Profile Page", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         return true;
                 }
 
@@ -104,6 +99,22 @@ public class MainActivity extends AppCompatActivity{
 //            startActivity(intent);
 //            finish();
 //        }
+    }
+
+    public  void ClickMenu(View view){
+        openDrawer(drawerLayout);
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+
     }
 
     private void startLoginActivity() {
@@ -163,6 +174,15 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+    }
+    public   static void redirectActivity(Activity activity, Class Class) {
+        Intent intent=new Intent(activity,Class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+
+    }
+    public  void clickCalendar(View view){
+        redirectActivity(this,Calendar.class);
     }
     public void onProfileClick(View view) {
         Toast.makeText(getApplicationContext(),"Profile Page",Toast.LENGTH_SHORT).show();

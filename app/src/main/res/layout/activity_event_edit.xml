@@ -54,7 +54,6 @@
         android:text="Save"
         android:layout_marginTop="20dp"
         android:textColor="@color/blue"
-        android:background="null"
         android:textStyle="bold"
         android:onClick="saveEventAction"
         android:layout_gravity="center"
