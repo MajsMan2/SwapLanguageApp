@@ -93,11 +93,11 @@ public class MainActivity extends AppCompatActivity{
         });
         parseApiData();
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(this, LoginRegisterActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+//            Intent intent = new Intent(this, LoginRegisterActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
     }
 
     public  void ClickMenu(View view){
