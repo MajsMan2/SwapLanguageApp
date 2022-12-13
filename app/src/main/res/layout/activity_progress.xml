@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C0BABA"
-    tools:context=".Views.ProgressFragment">
+    tools:context=".Views.ProgressActivity">
 
     <Button
         android:id="@+id/progressbutton"

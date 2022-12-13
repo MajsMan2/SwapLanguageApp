@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity{
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         return true;
                 }
-
                 return false;
             }
         });
@@ -113,14 +112,12 @@ public class MainActivity extends AppCompatActivity{
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-
     }
 
     private void startLoginActivity() {
         Intent intent = new Intent(this, LoginRegisterActivity.class);
         startActivity(intent);
         finish();
-
     }
 
     public void parseApiData(){
