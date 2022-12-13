@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.swaplanguageapp.CalendarUtils;
-import com.example.swaplanguageapp.Models.CalEvent;
 import com.example.swaplanguageapp.Models.CalendarEvent;
 import com.example.swaplanguageapp.R;
 

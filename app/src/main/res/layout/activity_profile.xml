@@ -78,7 +78,7 @@
                     android:src="@drawable/fui_ic_googleg_color_24dp" />
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/displayNameEdit"
+                    android:id="@+id/displayPhoneEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -114,14 +114,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Photos"
+                            android:text="Role"
                             android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
-                            android:text="125"
+                            android:text="Admin"
                             android:textColor="@color/design_default_color_primary"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -138,14 +138,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Followers"
+                            android:text="Created"
                             android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
-                            android:text="1205"
+                            android:text="Dec 7, 2022"
                             android:textColor="@color/blue"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -162,14 +162,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Following"
+                            android:text="Login Prov."
                             android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
-                            android:text="360"
+                            android:text="Google"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -188,7 +188,7 @@
             android:layout_marginTop="45dp">
             <LinearLayout
                 android:orientation="horizontal"
-                android:paddingLeft="25dp"
+                android:paddingLeft="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -197,7 +197,6 @@
                     android:src="@drawable/fui_ic_googleg_color_24dp"/>
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/displayEmailEdit"
-                    android:textStyle="bold"
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -206,7 +205,7 @@
             <LinearLayout
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp"
+                android:paddingLeft="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -214,8 +213,7 @@
                     android:layout_height="36dp"
                     android:src="@drawable/fui_ic_googleg_color_24dp"/>
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/displayPhoneEdit"
-                    android:textStyle="bold"
+                    android:id="@+id/displayNameEdit"
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -224,7 +222,7 @@
             <LinearLayout
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal"
-                android:paddingLeft="25dp"
+                android:paddingLeft="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView

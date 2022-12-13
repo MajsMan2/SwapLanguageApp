@@ -12,6 +12,7 @@ public class Series {
     @SerializedName("endDate")
     public OffsetDateTime EndDate;
     @SerializedName("events")
-    public Collection<CalEvent> Events;
+    public Collection<Event> Events;
 
 }
+

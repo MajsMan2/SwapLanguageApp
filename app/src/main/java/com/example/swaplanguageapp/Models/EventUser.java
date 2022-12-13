@@ -15,5 +15,6 @@ public class EventUser {
     @SerializedName("host")
     public Boolean Host;
     @SerializedName("event")
-    public CalEvent Event;
+    public com.example.swaplanguageapp.Models.Event Event;
 }
+

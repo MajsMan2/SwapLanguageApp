@@ -5,7 +5,6 @@ import static com.example.swaplanguageapp.CalendarUtils.monthYearFromDate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,13 +21,10 @@ import com.example.swaplanguageapp.CalendarUtils;
 import com.example.swaplanguageapp.Interfaces.EventService;
 import com.example.swaplanguageapp.Interfaces.EventUserService;
 import com.example.swaplanguageapp.Interfaces.SeriesService;
-import com.example.swaplanguageapp.MainActivity;
-import com.example.swaplanguageapp.Models.CalEvent;
+import com.example.swaplanguageapp.Models.Event;
 import com.example.swaplanguageapp.Models.EventUser;
 import com.example.swaplanguageapp.R;
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -104,12 +100,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     private void getById() {
         //Get event by id
-        CalEvent event = new CalEvent();
-        Call<List<CalEvent>> call = eventService.getById(event);
-        call.enqueue(new Callback<List<CalEvent>>() {
+        Event event = new Event();
+        Call<List<Event>> call = eventService.getById(event);
+        call.enqueue(new Callback<List<Event>>() {
             @Override
-            public void onResponse(Call<List<CalEvent>> call, Response<List<CalEvent>> response) {
-                CalEvent event = (CalEvent) response.body();
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                Event event = (Event) response.body();
                 OffsetDateTime startDate = event.StartDate;
                 OffsetDateTime endDate = event.EndDate;
                 Double durationHours = event.DurationHours;
@@ -124,7 +120,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             }
 
             @Override
-            public void onFailure(Call<List<CalEvent>> call, Throwable t) {
+            public void onFailure(Call<List<Event>> call, Throwable t) {
                 call.cancel();
 
             }
@@ -132,17 +128,17 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     }
 
     private void createNewEvent() {
-        CalEvent event = new CalEvent();
-        Call<CalEvent> call = eventService.Create(event);
-        call.enqueue(new Callback<CalEvent>() {
+        Event event = new Event();
+        Call<Event> call = eventService.Create(event);
+        call.enqueue(new Callback<Event>() {
             @Override
-            public void onResponse(Call<CalEvent> call, Response<CalEvent> response) {
-                CalEvent event = response.body();
+            public void onResponse(Call<Event> call, Response<Event> response) {
+                Event event = response.body();
                 Toast.makeText(getApplicationContext(), event.Title, Toast.LENGTH_LONG);
             }
 
             @Override
-            public void onFailure(Call<CalEvent> call, Throwable t) {
+            public void onFailure(Call<Event> call, Throwable t) {
                 call.cancel();
             }
         });

@@ -39,6 +39,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -90,15 +91,13 @@ public class MainActivity extends AppCompatActivity{
                 return false;
             }
         });
-
-//        profileButton = findViewById(R.id.profileButton);
         parseApiData();
 
-//        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-//            Intent intent = new Intent(this, LoginRegisterActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(this, LoginRegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public  void ClickMenu(View view){

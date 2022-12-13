@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-
     public static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
@@ -16,9 +15,8 @@ public class APIClient {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://localhost")
+                .baseUrl("https://localhost/1433")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
@@ -26,3 +24,6 @@ public class APIClient {
         return retrofit;
     }
 }
+
+
+
