@@ -15,8 +15,7 @@
         android:layout_gravity="start"
         >
 
-        <include
-            layout="@layout/main_navigation_drawer"/>
+      <include layout="@layout/main_navigation_drawer" />
 
     </RelativeLayout>
 
@@ -117,7 +116,7 @@
           android:layout_marginBottom="10dp"
           android:background="#00000000"
           android:foregroundTint="#000000"
-          app:srcCompat="@drawable/phone_svgrepo_com" />
+          app:srcCompat="@drawable/phone_svgrepo_com"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

@@ -20,7 +20,8 @@ import java.util.List;
 
 public class EventAdapter extends ArrayAdapter<CalendarEvent> {
 
-    public EventAdapter(@NonNull Context context, List<CalendarEvent> calEvents) {
+    public EventAdapter(@NonNull Context context, List<CalendarEvent> calEvents)
+    {
         super(context, 0, calEvents);
     }
 

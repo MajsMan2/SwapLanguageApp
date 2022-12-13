@@ -20,7 +20,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
     private final ArrayList<LocalDate> days;
     private final OnItemListener onItemListener;
 
-    public CalendarAdapter(ArrayList<LocalDate> days, OnItemListener onItemListener) {
+    public CalendarAdapter(ArrayList<LocalDate> days, OnItemListener onItemListener)
+    {
         this.days = days;
         this.onItemListener = onItemListener;
     }
@@ -58,7 +59,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
         return days.size();
     }
 
-    public interface OnItemListener {
+    public interface OnItemListener
+    {
         void onItemClick(int position, LocalDate date);
     }
 }

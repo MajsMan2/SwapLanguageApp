@@ -5,24 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C0BABA"
-    tools:context=".Views.VideoActivity">
-
-    <Button
-        android:id="@+id/videobutton"
-        android:layout_width="146dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="270dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="373dp"
-        android:background="@color/swaporan"
-        android:drawableTint="@color/swaporan"
-        android:foregroundTint="@color/swaporan"
-        android:text="Go Back"
-        android:textColor="#000000"
-        app:iconTint="@color/swaporan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".Views.VideoActivity"/>
