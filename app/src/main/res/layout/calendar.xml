@@ -8,12 +8,12 @@
     android:id="@+id/drawer_layout"
     android:background="@color/white"
     tools:context=".Views.ProfileActivity">
+
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:layout_gravity="start">
-
         <include layout="@layout/main_navigation_drawer" />
     </RelativeLayout>
 
@@ -25,13 +25,11 @@
         android:background="#C0BABA"
         tools:context=".Views.ProfileActivity">
 
-
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent" >
-
         </FrameLayout>
 
         <LinearLayout
@@ -92,11 +90,7 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,22 +159,13 @@
                 android:textAlignment="center"
                 android:textColor="@color/grey"
                 android:textSize="16sp" />
-
         </LinearLayout>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="462dp"
-            />
-
-
+            android:layout_height="462dp"/>
         </LinearLayout>
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
-

@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
-    public void onVideoesClick(View view) {
+    public void onVideosClick(View view) {
         Toast.makeText(getApplicationContext(), "Videos Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
@@ -208,6 +208,11 @@ public class MainActivity extends AppCompatActivity{
     public void onContactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
+    public void onHomeClick(View view) {
+        Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

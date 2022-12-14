@@ -209,7 +209,7 @@
       android:layout_width="0dp"
       android:layout_height="175dp"
       android:layout_marginBottom="-10dp"
-      android:onClick="onVideoesClick"
+      android:onClick="onVideosClick"
       android:orientation="horizontal"
       app:layout_constraintBottom_toTopOf="@id/linearLayout3"
       app:layout_constraintEnd_toEndOf="parent"

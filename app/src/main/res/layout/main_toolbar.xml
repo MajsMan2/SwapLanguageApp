@@ -13,9 +13,7 @@
         android:layout_height="wrap_content"
         android:onClick="ClickMenu"
         android:src="@drawable/ic_baseline_menu_24"
-        app:tint="@color/swaporan"
-
-        />
+        app:tint="@color/swaporan"/>
 
     <ImageView
         android:layout_width="35dp"
@@ -31,7 +29,4 @@
         >
 
     </ImageView>
-
-
-
 </LinearLayout>

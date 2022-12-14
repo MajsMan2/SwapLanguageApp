@@ -7,12 +7,12 @@
     android:id="@+id/drawer_layout"
     android:background="@color/white"
     tools:context=".Views.ProfileActivity">
+
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:layout_gravity="start">
-
         <include layout="@layout/main_navigation_drawer" />
     </RelativeLayout>
 
@@ -30,8 +30,6 @@
         android:layout_above="@id/bottom_navigation"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent" >
-
-
     </FrameLayout>
 
 
@@ -44,13 +42,11 @@
         app:menu="@menu/bottom_nav_menu"
         android:background="@color/swapblue"/>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -65,10 +61,7 @@
                 android:layout_marginTop="70dp"
                 android:background="@color/swaporan"
                 android:gravity="center"
-                android:orientation="vertical"
-
-
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="150dp"
@@ -125,7 +118,6 @@
                             android:textColor="@color/design_default_color_primary"
                             android:textSize="20sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -149,7 +141,6 @@
                             android:textColor="@color/blue"
                             android:textSize="20sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -176,7 +167,6 @@
 
                     </LinearLayout>
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
 
@@ -238,9 +228,7 @@
                     android:paddingLeft="20dp"
                     android:text="Add to group"/>
             </LinearLayout>
-
         </LinearLayout>
-
 
         <Button
             android:id="@+id/updateProfileButton"
@@ -253,7 +241,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/progressBar" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
