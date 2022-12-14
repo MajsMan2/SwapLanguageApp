@@ -39,6 +39,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
@@ -46,7 +47,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ArrayList<Model> dataList = new ArrayList<>();
     RecyclerView myRv;
@@ -68,8 +69,10 @@ public class MainActivity extends AppCompatActivity{
         badgeDrawable.setNumber(8);
 
         bottomNavigationView.setSelectedItemId(R.id.home);
-        drawerLayout = findViewById(R.id.drawer);
 
+        drawerLayout = findViewById(R.id.drawer);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -98,7 +101,39 @@ public class MainActivity extends AppCompatActivity{
 //            finish();
 //        }
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        Button button = findViewById(R.id.button);
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.nav_calendar:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, Calendar.class);
+                startActivity(intent1);
+                finish();                break;
+            case R.id.nav_contact:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+
+                Intent intent2 = new Intent(this, ContactActivity.class);
+                startActivity(intent2);
+                finish();
+            case R.id.nav_logout:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+
+                Intent intent3 = new Intent(this, LoginRegisterActivity.class);
+                startActivity(intent3);
+                finish();
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
     public  void ClickMenu(View view){
         openDrawer(drawerLayout);
     }
@@ -107,12 +142,13 @@ public class MainActivity extends AppCompatActivity{
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-
-    public static void closeDrawer(DrawerLayout drawerLayout) {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
+    public  void clickContact(View view){
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+        finish();
     }
+
+
 
     private void startLoginActivity() {
         Intent intent = new Intent(this, LoginRegisterActivity.class);

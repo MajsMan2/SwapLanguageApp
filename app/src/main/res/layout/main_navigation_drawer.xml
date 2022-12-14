@@ -13,8 +13,7 @@
         android:layout_margin="17dp"
         android:background="#00202C3C"
         android:onClick="ClickLogo"
-        android:src="@drawable/swl_logo"
-        app:tint="#FF7404"/>
+        android:src="@drawable/swl_logo" />
 
     <View
         android:layout_width="match_parent"
@@ -29,7 +28,8 @@
         android:background="#FF9800"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="Clickhome">
+        android:onClick="Clickhome"
+        android:id="@+id/nav_home">
 
         <TextView
             android:layout_width="0dp"
@@ -57,7 +57,8 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="clickCalendar">
+        android:onClick="clickCalendar"
+        android:id="@+id/nav_calendar">
 
         <TextView
             android:layout_width="0dp"
@@ -85,7 +86,8 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="onConctactClick">
+        android:onClick="clickContact"
+        android:id="@+id/nav_contact">
 
         <TextView
             android:layout_width="0dp"
@@ -111,7 +113,8 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="logoutClick">
+        android:onClick="logoutClick"
+        android:id="@+id/nav_logout">
 
         <TextView
             android:layout_width="0dp"
