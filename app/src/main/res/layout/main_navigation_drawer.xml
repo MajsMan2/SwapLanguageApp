@@ -13,8 +13,7 @@
         android:layout_margin="17dp"
         android:background="#00202C3C"
         android:onClick="ClickLogo"
-        android:src="@drawable/swl_logo"
-        app:tint="#FF7404"/>
+        android:src="@drawable/swl_logo" />
 
     <View
         android:layout_width="match_parent"
@@ -29,7 +28,8 @@
         android:background="#FF9800"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="onHomeClick">
+        android:onClick="Clickhome"
+        android:id="@+id/nav_home">
 
         <TextView
             android:layout_width="0dp"
@@ -48,6 +48,7 @@
             android:layout_marginEnd="50dp"
             android:src="@drawable/ic_home"
             app:tint="@color/swapblue"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -56,14 +57,15 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="clickCalendar">
+        android:onClick="clickCalendar"
+        android:id="@+id/nav_calendar">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
-            android:onClick="onCalendarClick"
+            android:onClick="clickCalendar"
             android:text="Calendar"
             android:textColor="@color/swapblue"
             android:textSize="18sp"
@@ -84,7 +86,8 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="onContactClick">
+        android:onClick="clickContact"
+        android:id="@+id/nav_contact">
 
         <TextView
             android:layout_width="0dp"
@@ -110,7 +113,8 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="logoutClick">
+        android:onClick="logoutClick"
+        android:id="@+id/nav_logout">
 
         <TextView
             android:layout_width="0dp"

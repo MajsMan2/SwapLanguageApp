@@ -92,6 +92,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         if (date != null) {
             CalendarUtils.selectedDate = date;
             setMonthView();
+
         }
     }
 

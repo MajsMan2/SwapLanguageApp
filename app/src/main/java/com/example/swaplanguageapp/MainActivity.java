@@ -39,6 +39,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
@@ -46,7 +47,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ArrayList<Model> dataList = new ArrayList<>();
     RecyclerView myRv;
@@ -68,7 +69,10 @@ public class MainActivity extends AppCompatActivity{
         badgeDrawable.setNumber(8);
 
         bottomNavigationView.setSelectedItemId(R.id.home);
+
         drawerLayout = findViewById(R.id.drawer);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -97,7 +101,39 @@ public class MainActivity extends AppCompatActivity{
 //            finish();
 //        }
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        Button button = findViewById(R.id.button);
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.nav_calendar:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, Calendar.class);
+                startActivity(intent1);
+                finish();                break;
+            case R.id.nav_contact:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+
+                Intent intent2 = new Intent(this, ContactActivity.class);
+                startActivity(intent2);
+                finish();
+            case R.id.nav_logout:
+                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
+
+                Intent intent3 = new Intent(this, LoginRegisterActivity.class);
+                startActivity(intent3);
+                finish();
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
     public  void ClickMenu(View view){
         openDrawer(drawerLayout);
     }
@@ -106,11 +142,13 @@ public class MainActivity extends AppCompatActivity{
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    public static void closeDrawer(DrawerLayout drawerLayout) {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
+    public  void clickContact(View view){
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+        finish();
     }
+
+
 
     private void startLoginActivity() {
         Intent intent = new Intent(this, LoginRegisterActivity.class);
@@ -139,6 +177,7 @@ public class MainActivity extends AppCompatActivity{
                         myRv.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.VERTICAL, false));
                         myRv.setAdapter(adapter);
                     }
+
                 } catch (Exception e){
                     e.printStackTrace();
                 }
@@ -146,12 +185,12 @@ public class MainActivity extends AppCompatActivity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
     public void logoutClick(View view) {
         Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
         AuthUI.getInstance().signOut(this)
@@ -160,62 +199,51 @@ public class MainActivity extends AppCompatActivity{
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     startLoginActivity();
+
                 } else {
                     Log.e(TAG, "onComplete", task.getException());
                 }
+
             }
         });
     }
-
     public   static void redirectActivity(Activity activity, Class Class) {
         Intent intent=new Intent(activity,Class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
-    }
 
+    }
     public  void clickCalendar(View view){
         redirectActivity(this,Calendar.class);
     }
-
     public void onProfileClick(View view) {
         Toast.makeText(getApplicationContext(),"Profile Page",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
-
     public void onCalendarClick(View view) {
         Toast.makeText(getApplicationContext(),"Calendar Page",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
-
-    public void onVideosClick(View view) {
+    public void onVideoesClick(View view) {
         Toast.makeText(getApplicationContext(), "Videos Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
     }
-
     public void onProgressClick(View view) {
         Toast.makeText(getApplicationContext(), "Progress Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ProgressActivity.class);
         startActivity(intent);
     }
-
     public void onBlogClick(View view) {
         Toast.makeText(getApplicationContext(), "Blog Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, BlogActivity.class);
         startActivity(intent);
     }
-
-    public void onContactClick(View view) {
+    public void onConctactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
-        startActivity(intent);
-    }
-
-    public void onHomeClick(View view) {
-        Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
