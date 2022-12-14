@@ -23,7 +23,6 @@ public class CalendarEvent {
             if(calEvent.getDate().equals(date))
                 calEvents.add(calEvent);
         }
-
         return calEvents;
     }
 
@@ -31,7 +30,6 @@ public class CalendarEvent {
     private LocalDate date;
     private LocalTime time;
     private AutoCompleteTextView autoCompleteTextView;
-
 
     public CalendarEvent(String name, LocalDate date, LocalTime time, AutoCompleteTextView autoCompleteTextView) {
         this.name = name;

@@ -13,6 +13,4 @@ public class Series {
     public OffsetDateTime EndDate;
     @SerializedName("events")
     public Collection<Event> Events;
-
 }
-

@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity{
         bottomNavigationView.setSelectedItemId(R.id.home);
         drawerLayout = findViewById(R.id.drawer);
 
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity{
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-
     public static void closeDrawer(DrawerLayout drawerLayout) {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -141,7 +139,6 @@ public class MainActivity extends AppCompatActivity{
                         myRv.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.VERTICAL, false));
                         myRv.setAdapter(adapter);
                     }
-
                 } catch (Exception e){
                     e.printStackTrace();
                 }
@@ -149,12 +146,12 @@ public class MainActivity extends AppCompatActivity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
     public void logoutClick(View view) {
         Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
         AuthUI.getInstance().signOut(this)
@@ -163,53 +160,59 @@ public class MainActivity extends AppCompatActivity{
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     startLoginActivity();
-
                 } else {
                     Log.e(TAG, "onComplete", task.getException());
                 }
-
             }
         });
     }
+
     public   static void redirectActivity(Activity activity, Class Class) {
         Intent intent=new Intent(activity,Class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
-
     }
+
     public  void clickCalendar(View view){
         redirectActivity(this,Calendar.class);
     }
+
     public void onProfileClick(View view) {
         Toast.makeText(getApplicationContext(),"Profile Page",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
+
     public void onCalendarClick(View view) {
         Toast.makeText(getApplicationContext(),"Calendar Page",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
+
     public void onVideosClick(View view) {
         Toast.makeText(getApplicationContext(), "Videos Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
     }
+
     public void onProgressClick(View view) {
         Toast.makeText(getApplicationContext(), "Progress Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ProgressActivity.class);
         startActivity(intent);
     }
+
     public void onBlogClick(View view) {
         Toast.makeText(getApplicationContext(), "Blog Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, BlogActivity.class);
         startActivity(intent);
     }
+
     public void onContactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
     }
+
     public void onHomeClick(View view) {
         Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);

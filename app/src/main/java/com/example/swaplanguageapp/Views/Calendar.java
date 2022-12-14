@@ -53,7 +53,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
-//        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
@@ -61,7 +60,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         drawerLayout = findViewById(R.id.drawer);
         responseText = findViewById(R.id.calendar);
         eventService = APIClient.getClient().create(EventService.class);
-
     }
 
     private void initWidgets() {
@@ -77,7 +75,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
-
     }
 
     public void nextMonthAction(View view) {
@@ -122,7 +119,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             @Override
             public void onFailure(Call<List<Event>> call, Throwable t) {
                 call.cancel();
-
             }
         });
     }

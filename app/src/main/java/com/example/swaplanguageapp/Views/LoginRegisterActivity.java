@@ -35,6 +35,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
             this.finish();
         }
     }
+
     public void handleLogInRegister(View view) {
 
         List<AuthUI.IdpConfig> provider = Arrays.asList(
@@ -51,6 +52,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -64,12 +66,10 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 } else {
                     //This is a returning user
                     Toast.makeText(this, "Welcome Back Again", Toast.LENGTH_SHORT).show();
-
                 }
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 this.finish();
-
             } else {
                 // Sign in failed
                 IdpResponse response = IdpResponse.fromResultIntent(data);

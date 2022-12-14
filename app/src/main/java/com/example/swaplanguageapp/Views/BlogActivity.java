@@ -24,13 +24,11 @@ public class BlogActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
         getSupportActionBar().hide();
-
 
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
 
@@ -41,8 +39,8 @@ public class BlogActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.news);
         drawerLayout = findViewById(R.id.drawer);
 
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
@@ -59,12 +57,11 @@ public class BlogActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         return true;
                 }
-
                 return false;
             }
         });
-
     }
+
     public  void ClickMenu(View view){
         openDrawer(drawerLayout);
     }
@@ -73,11 +70,9 @@ public class BlogActivity extends AppCompatActivity {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-
     public static void closeDrawer(DrawerLayout drawerLayout) {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-
     }
 }

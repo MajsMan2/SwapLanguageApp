@@ -31,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "ProfileActivity";
 
-    //    CircleimageView circleimageView;
     TextInputEditText displayNameEdit;
     TextInputEditText displayEmailEdit;
     TextInputEditText displayPhoneEdit;
@@ -59,7 +58,6 @@ public class ProfileActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.profile);
 
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -76,13 +74,9 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         return true;
                 }
-
                 return false;
             }
         });
-
-
-
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -118,7 +112,6 @@ public class ProfileActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         view.setEnabled(true);
                         Toast.makeText(ProfileActivity.this, "Succesfully Updated Profile", Toast.LENGTH_SHORT).show();
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -126,9 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         view.setEnabled(true);
                         Log.d(TAG, "onFailure: ", e.getCause());
-
                     }
                 });
     }
-
 }

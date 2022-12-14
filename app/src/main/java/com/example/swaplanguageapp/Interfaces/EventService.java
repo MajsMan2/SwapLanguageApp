@@ -21,4 +21,3 @@ public interface EventService {
     @DELETE("EventUser/{id}")
     Call<Event> DeleteById(@Path("id") Event event);
 }
-

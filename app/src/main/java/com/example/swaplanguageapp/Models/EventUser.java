@@ -17,4 +17,3 @@ public class EventUser {
     @SerializedName("event")
     public com.example.swaplanguageapp.Models.Event Event;
 }
-
