@@ -137,7 +137,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                 Event event = response.body();
                 Toast.makeText(getApplicationContext(), event.Title, Toast.LENGTH_LONG);
             }
-
             @Override
             public void onFailure(Call<Event> call, Throwable t) {
                 call.cancel();

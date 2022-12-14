@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:background="@color/swapblue">
+        android:background="@color/swapblue"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
@@ -23,33 +23,34 @@
             android:background="@color/swaporan"
             android:backgroundTint="@color/swaporan"
             android:onClick="previousMonthAction"
-            android:textStyle="bold"
             android:text="❮"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/monthYear"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:background="@color/swapblue"
             android:text="@string/datecal"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/tyveSP" />
+            android:textSize="@dimen/tyveSP"
+            android:textStyle="bold" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/swaporan"
+            android:background="@color/swapblue"
             android:backgroundTint="@color/swaporan"
             android:onClick="previousMonthAction"
-            android:textStyle="bold"
             android:text="❯"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -134,13 +135,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@null"
         android:onClick="newEventAction"
         android:text="New Event"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textSize="@dimen/tyveSP" />
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/tyveSP"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/eventListView"
