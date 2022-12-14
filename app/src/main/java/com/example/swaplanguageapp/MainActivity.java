@@ -106,26 +106,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        Button button = findViewById(R.id.button);
         switch (item.getItemId()) {
             case R.id.nav_home:
-                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.nav_calendar:
-                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(this, Calendar.class);
                 startActivity(intent1);
                 finish();                break;
             case R.id.nav_contact:
-                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
-
                 Intent intent2 = new Intent(this, ContactActivity.class);
                 startActivity(intent2);
                 finish();
             case R.id.nav_logout:
-                Toast.makeText(this, "Nigger", Toast.LENGTH_SHORT).show();
-
                 Intent intent3 = new Intent(this, LoginRegisterActivity.class);
                 startActivity(intent3);
                 finish();
