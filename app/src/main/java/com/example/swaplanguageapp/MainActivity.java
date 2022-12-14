@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(this, BlogActivity.class);
         startActivity(intent);
     }
-    public void onConctactClick(View view) {
+    public void onContactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);

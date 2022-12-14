@@ -85,7 +85,7 @@
         android:orientation="horizontal"
         android:background="#FF9800"
         android:layout_gravity="center_vertical"
-        android:onClick="onConctactClick">
+        android:onClick="onContactClick">
 
         <TextView
             android:layout_width="0dp"

@@ -67,6 +67,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/swaporan"
         android:padding="10dp"
+        android:onClick="onBlogClick"
         app:cardElevation="4dp">
 
       <TextView
@@ -85,7 +86,6 @@
           android:layout_height="100dp"
           android:layout_gravity="bottom|center"
           android:layout_marginBottom="10dp"
-          android:onClick="onConctactClick"
           app:srcCompat="@drawable/blog_svgrepo_com" />
     </androidx.cardview.widget.CardView>
 
@@ -96,6 +96,7 @@
         android:layout_weight="1"
         android:backgroundTint="@color/swaporan"
         android:padding="10dp"
+        android:onClick="onContactClick"
         app:cardElevation="4dp">
 
       <TextView
