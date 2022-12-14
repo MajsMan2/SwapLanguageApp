@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        Button button = findViewById(R.id.button);
         switch (item.getItemId()) {
             case R.id.nav_home:
-
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -116,12 +115,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 finish();                break;
             case R.id.nav_contact:
-
                 Intent intent2 = new Intent(this, ContactActivity.class);
                 startActivity(intent2);
                 finish();
             case R.id.nav_logout:
-
                 Intent intent3 = new Intent(this, LoginRegisterActivity.class);
                 startActivity(intent3);
                 finish();
@@ -143,6 +140,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
         finish();
     }
+
+
 
     private void startLoginActivity() {
         Intent intent = new Intent(this, LoginRegisterActivity.class);
@@ -220,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
-    public void onVideosClick(View view) {
+    public void onVideoesClick(View view) {
         Toast.makeText(getApplicationContext(), "Videos Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
@@ -235,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent(this, BlogActivity.class);
         startActivity(intent);
     }
-    public void onContactClick(View view) {
+    public void onConctactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
