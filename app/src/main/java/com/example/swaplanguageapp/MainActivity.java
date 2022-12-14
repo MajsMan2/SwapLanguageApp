@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent(this, Calendar.class);
         startActivity(intent);
     }
-    public void onVideosClick(View view) {
+    public void onVideoesClick(View view) {
         Toast.makeText(getApplicationContext(), "Videos Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
@@ -241,14 +241,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent(this, BlogActivity.class);
         startActivity(intent);
     }
-    public void onContactClick(View view) {
+    public void onConctactClick(View view) {
         Toast.makeText(getApplicationContext(), "Contact Page", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ContactActivity.class);
-        startActivity(intent);
-    }
-    public void onHomeClick(View view) {
-        Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

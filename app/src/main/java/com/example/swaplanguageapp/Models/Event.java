@@ -33,4 +33,3 @@ public class Event {
     @SerializedName("users")
     public Collection<EventUser> eventUser;
 }
-

@@ -30,7 +30,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         holder.tv_event.setText(modelArrayList.get(position).getEvent());
         holder.tv_eventusers.setText(modelArrayList.get(position).getEventUsers());
         holder.tv_series.setText(modelArrayList.get(position).getSeries());

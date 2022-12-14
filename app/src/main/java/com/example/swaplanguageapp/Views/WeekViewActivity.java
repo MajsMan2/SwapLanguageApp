@@ -56,7 +56,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
         setEventAdapter();
-
     }
 
     public void previousWeekAction(View view) {

@@ -41,7 +41,6 @@ public class EventEditActivity extends AppCompatActivity {
                 String item = parent.getItemAtPosition(position).toString();
             }
         });
-
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
         eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
     }
@@ -64,6 +63,4 @@ public class EventEditActivity extends AppCompatActivity {
         CalendarEvent.eventsList.add(calEvent);
         finish();
     }
-
 }
-
