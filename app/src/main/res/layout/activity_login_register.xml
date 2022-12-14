@@ -32,12 +32,10 @@
 
     <ImageView
         android:id="@+id/girlsmile"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="412dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mennesker"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="200dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/istockphoto_1138642647_612x612" />
 
     <Button
