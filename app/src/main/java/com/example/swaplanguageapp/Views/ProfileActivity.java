@@ -98,10 +98,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-    public void ClickMenu(View view){
-        MainActivity.openDrawer(drawerLayout);
-    }
-
     public void updateProfile(View view) {
 
         view.setEnabled(false);

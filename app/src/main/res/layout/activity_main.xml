@@ -14,8 +14,8 @@
         android:background="@color/white"
         android:layout_gravity="start"
         >
-
-      <include layout="@layout/main_navigation_drawer" />
+      <include
+          layout="@layout/main_navigation_drawer"/>
 
     </RelativeLayout>
 
