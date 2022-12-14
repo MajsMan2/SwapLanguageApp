@@ -37,7 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/istockphoto_1138642647_612x612" />
+        app:srcCompat="@drawable/istockphoto_1138642647_612x612"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button"

@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface EventService {
@@ -20,5 +21,8 @@ public interface EventService {
 
     @DELETE("EventUser/{id}")
     Call<Event> DeleteById(@Path("id") Event event);
+
+    @PUT("Event/[id}")
+    Call<Event> UpdateById(@Path("id") Event event);
 }
 
