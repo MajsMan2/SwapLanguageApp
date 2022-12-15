@@ -50,10 +50,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         displayNameEdit = findViewById(R.id.displayNameEdit);
         displayEmailEdit = findViewById(R.id.displayEmailEdit);
-        displayPhoneEdit = findViewById(R.id.displayPhoneEdit);
+//        displayPhoneEdit = findViewById(R.id.displayPhoneEdit);
         drawerLayout = findViewById(R.id.drawer);
 
-        updateProfileButton = findViewById(R.id.updateProfileButton);
+//        updateProfileButton = findViewById(R.id.updateProfileButton);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.profile);
@@ -63,14 +63,12 @@ public class ProfileActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.home:
-                        Toast.makeText(getApplicationContext(), "Home Page", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         return true;
                     case R.id.news:
                         startActivity(new Intent(getApplicationContext(), BlogActivity.class));
                         return true;
                     case R.id.profile:
-                        Toast.makeText(getApplicationContext(), "Profile Page", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         return true;
                 }
@@ -86,8 +84,8 @@ public class ProfileActivity extends AppCompatActivity {
                 displayNameEdit.setSelection(user.getDisplayName().length());
                 displayEmailEdit.setText(user.getEmail());
                 displayEmailEdit.setSelection(user.getEmail().length());
-                displayPhoneEdit.setText(user.getPhoneNumber());
-                displayPhoneEdit.setSelection(user.getPhoneNumber().length());
+//                displayPhoneEdit.setText(user.getPhoneNumber());
+//                displayPhoneEdit.setSelection(user.getPhoneNumber().length());
             }
         }
     }

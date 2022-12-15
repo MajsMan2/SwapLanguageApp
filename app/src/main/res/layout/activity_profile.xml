@@ -42,206 +42,421 @@
         app:menu="@menu/bottom_nav_menu"
         android:background="@color/swapblue"/>
 
-    <LinearLayout
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#C0BABA"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="359dp">-->
+
+<!--            <include layout="@layout/main_toolbar" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="264dp"-->
+<!--                android:layout_height="236dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:background="@color/swaporan"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="45dp"-->
+<!--                    android:src="@drawable/fui_ic_googleg_color_24dp" />-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/displayPhoneEdit"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:textColor="#fff"-->
+<!--                    android:textSize="21sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/textInputLayout2"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/circleImageView" />-->
+<!--            </LinearLayout>-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="120dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="275dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:weightSum="3">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Role"-->
+<!--                            android:textSize="20sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:text="Admin"-->
+<!--                            android:textColor="@color/design_default_color_primary"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Created"-->
+<!--                            android:textSize="20sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:text="Dec 7, 2022"-->
+<!--                            android:textColor="@color/blue"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Login Prov."-->
+<!--                            android:textSize="20sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:text="Google"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </RelativeLayout>-->
+
+<!--        <LinearLayout-->
+<!--            -->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@color/white"-->
+<!--            android:layout_marginTop="45dp">-->
+<!--            <LinearLayout-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/white">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="36dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:src="@drawable/fui_ic_googleg_color_24dp"/>-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/displayEmailEdit"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingLeft="20dp" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="36dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:src="@drawable/fui_ic_googleg_color_24dp"/>-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/displayNameEdit"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingLeft="20dp" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="36dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:src="@drawable/fui_ic_googleg_color_24dp"/>-->
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingLeft="20dp"-->
+<!--                    android:text="Add to group"/>-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+        tools:context=".Views.ContactActivity"
+        android:background="@color/swaporan">
 
-        <RelativeLayout
+
+        <ImageView
+            android:id="@+id/bg_img"
             android:layout_width="match_parent"
-            android:layout_height="359dp">
+            android:layout_height="256dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            android:src="@drawable/swl_logo" />
 
-            <include layout="@layout/main_toolbar" />
-
-            <LinearLayout
-                android:layout_width="264dp"
-                android:layout_height="236dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="70dp"
-                android:background="@color/swaporan"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="45dp"
-                    android:src="@drawable/fui_ic_googleg_color_24dp" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/displayPhoneEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:textColor="#fff"
-                    android:textSize="21sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-                    app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-                    app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="120dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="275dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Role"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Admin"
-                            android:textColor="@color/design_default_color_primary"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Created"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Dec 7, 2022"
-                            android:textColor="@color/blue"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Login Prov."
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Google"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="360dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_marginTop="45dp">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/fui_ic_googleg_color_24dp"/>
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/displayEmailEdit"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/fui_ic_googleg_color_24dp"/>
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/displayNameEdit"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/fui_ic_googleg_color_24dp"/>
+            android:layout_marginTop="-15dp"
+            android:layout_below="@+id/bg_img"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="12dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/swapblue"
+                android:paddingTop="8dp"
+                android:paddingBottom="140dp">
+
                 <TextView
-                    android:textStyle="bold"
-
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/contact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="Add to group"/>
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:text="Profile"
+                    android:textColor="@color/swaporan"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/updateProfileButton"
-            android:layout_width="171dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
-            android:onClick="updateProfile"
-            android:text="Update Profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/progressBar" />
-    </LinearLayout>
+                <View
+                    android:id="@+id/line_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/contact"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:background="@color/swaporan" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line_view"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgg"
+                        android:layout_width="30dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/phone_svgrepo_com"
+                        app:tint="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/lin_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imgg"
+                        android:layout_toRightOf="@id/imgg"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="0dp"
+                            android:text="E-Mail"
+                            android:textColor="@color/swaporan"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/displayEmailEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_mob"
+                        android:layout_width="30dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@id/lin_1"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/ic_baseline_email_24"
+                        app:tint="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/lin_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lin_1"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/img_mob"
+                        android:layout_toRightOf="@id/img_mob"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="0dp"
+                            android:text="Username"
+                            android:textColor="@color/swaporan"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/displayNameEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/mail_img"
+                        android:layout_width="30dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@id/lin_2"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/ic_home"
+                        app:tint="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/lin_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lin_2"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/mail_img"
+                        android:layout_toRightOf="@id/mail_img"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="0dp"
+                            android:text="Module level"
+                            android:textColor="@color/swaporan"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/send_your_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Module 1"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/updateProfileButton"
+                android:layout_width="171dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="350dp"
+                android:onClick="updateProfile"
+                android:text="Update Profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </Button>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+<!--            app:layout_constraintTop_toTopOf="@+id/progressBar"-->
+            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

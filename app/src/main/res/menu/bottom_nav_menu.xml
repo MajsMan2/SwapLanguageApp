@@ -5,7 +5,7 @@
         android:title="Home"
         android:icon="@drawable/ic_home"/>
     <item android:id="@+id/news"
-        android:title="News"
+        android:title="Blog"
         android:icon="@drawable/ic_baseline_article_24"/>
     <item android:id="@+id/profile"
         android:title="Profile"
