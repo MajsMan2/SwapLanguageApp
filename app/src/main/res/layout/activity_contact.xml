@@ -223,7 +223,8 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/fui_ic_facebook_white_22dp" />
+                            android:onClick="goToFcbUrl"
+                            android:src="@drawable/icons8_facebook" />
 
                         <ImageView
                             android:id="@+id/instagram"
@@ -231,7 +232,8 @@
                             android:layout_height="40dp"
                             android:layout_marginLeft="55dp"
                             android:contentDescription="TODO"
-                            android:src="@drawable/instagram" />
+                            android:onClick="goToInstUrl"
+                            android:src="@drawable/instagram_logo_svgrepo_com" />
 
                         <ImageView
                             android:id="@+id/linkedin"
@@ -239,8 +241,8 @@
                             android:layout_height="40dp"
                             android:layout_marginLeft="110dp"
                             android:contentDescription="TODO"
-                            android:src="@drawable/linkedin" />
-
+                            android:onClick="goToLinkdUrl"
+                            android:src="@drawable/linkedin_svgrepo_com" />
 
                     </RelativeLayout>
 
